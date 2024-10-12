@@ -4,10 +4,13 @@ import { Routes, Route } from 'react-router-dom';
 import PrivateRouteWrapper from './components/PrivateRouteWrapper';
 import toast, { Toaster } from "react-hot-toast";
 import { useEffect } from 'react';
-import Chat from './pages/Chat';
+import PDFChat from './pages/PDFChat';
+import Header from './components/Header';
+import LandingPage from './pages/LandingPage';
+import Documents from './pages/Documents';
 
 function App() {
-  
+
   const handleClick = () => {
     toast.dismiss();
   };
@@ -22,10 +25,13 @@ function App() {
 
   return (
     <>
+      <Header />
       <Routes>
-        <Route path="/" element={<AuthForm />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path="/auth" element={<AuthForm />} />
         <Route element={<PrivateRouteWrapper />}>
-          <Route path='/chat' element={<Chat />} />
+          <Route path='/chat' element={<PDFChat />} />
+          <Route path='/documents' element={<Documents />} />
         </Route>
       </Routes>
       <Toaster

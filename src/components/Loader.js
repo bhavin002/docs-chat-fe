@@ -1,10 +1,9 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
 
 const Loader = () => (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-        <Spinner animation="border" variant="primary" />
-    </div>
+  <div className="flex justify-center items-center h-screen bg-gray-900">
+    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white-900"></div>
+  </div>
 );
 
 export default Loader;
