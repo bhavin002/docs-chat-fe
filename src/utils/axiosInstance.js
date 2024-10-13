@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = () => {
-  const token = localStorage.getItem("authToken");
+  const token = JSON.parse(localStorage.getItem("authToken")).token;
   const headers = {
     "Content-Type": "application/json",
     Authorization: token ? `Bearer ${token}` : "",

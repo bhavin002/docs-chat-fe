@@ -30,7 +30,7 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path="/auth" element={<AuthForm />} />
         <Route element={<PrivateRouteWrapper />}>
-          <Route path='/chat' element={<PDFChat />} />
+          <Route path='/chat/:documentId' element={<PDFChat />} />
           <Route path='/documents' element={<Documents />} />
         </Route>
       </Routes>
