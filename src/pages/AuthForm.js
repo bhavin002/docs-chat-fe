@@ -13,7 +13,7 @@ const AuthForm = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const [auth,setAuth] = useAuth();
+  const [auth, setAuth] = useAuth();
 
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const AuthForm = () => {
       const response = await apiClient().post(endpoint, {
         ...values
       });
-      if (!isRegister && response.data.token) {
+      if (!isRegister && response.data) {
         localStorage.setItem('authToken', JSON.stringify(response.data));
         console.log('✌️response.data --->', response.data);
         setAuth({
