@@ -134,6 +134,7 @@ const AuthForm = () => {
                     <div className="relative">
                       <Field
                         name="password"
+                        autoComplete="current-password" 
                         component={CustomInput}
                         type={passwordShown ? 'text' : 'password'}
                         placeholder="Enter your password"

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useAuth } from '../context/auth';
+import { usePostHog } from "posthog-js/react";
 
 const Header = () => {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [auth, setAuth] = useAuth();
+  const posthog = usePostHog();
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
@@ -15,6 +17,7 @@ const Header = () => {
       token: "",
     });
     navigate('/');
+    posthog.reset()
   };
 
   return (
